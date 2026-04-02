@@ -65,3 +65,19 @@ footer {
   color: #888;
   font-size: 0.9rem;
 }
+nav {
+  background-color: #27ae60;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
