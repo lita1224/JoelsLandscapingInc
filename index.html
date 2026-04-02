@@ -53,40 +53,38 @@
     <p>Check out some of our recent projects:</p>
 
     <div class="flip-container">
-      <!-- Card 1: Image -->
+      <!-- Card 1 -->
       <div class="flip-card">
         <div class="flip-card-inner">
           <div class="flip-card-front">
             <img src="work-sample.jpg" alt="Project 1">
           </div>
           <div class="flip-card-back">
-            <h3>Project 1</h3>
-            <p>Lawn care and landscaping work</p>
+            <img src="work-sample2.jpg" alt="Project 1 Back">
           </div>
         </div>
       </div>
 
-      <!-- Card 2: Image -->
+      <!-- Card 2 -->
       <div class="flip-card">
         <div class="flip-card-inner">
           <div class="flip-card-front">
             <img src="work-sample2.jpg" alt="Project 2">
           </div>
           <div class="flip-card-back">
-            <h3>Project 2</h3>
-            <p>Garden design and hardscaping</p>
+            <video src="work-video.mp4" autoplay muted loop></video>
           </div>
         </div>
       </div>
 
-      <!-- Card 3: Video -->
+      <!-- Card 3 -->
       <div class="flip-card">
         <div class="flip-card-inner">
           <div class="flip-card-front">
-            <img src="work-sample2.jpg" alt="Video project thumbnail">
+            <img src="work-sample2.jpg" alt="Project 3">
           </div>
           <div class="flip-card-back">
-            <video src="work-video.mp4" autoplay muted loop></video>
+            <p>More Projects Coming Soon!</p>
           </div>
         </div>
       </div>
@@ -115,7 +113,7 @@
     <p>© 2026 Joel's Landscaping</p>
   </footer>
 
-  <!-- JS for highlighting nav links -->
+  <!-- JS for active nav link highlighting -->
   <script>
     const sections = document.querySelectorAll("section");
     const navLinks = document.querySelectorAll("nav a");
@@ -124,17 +122,10 @@
       let current = "";
       sections.forEach(section => {
         const sectionTop = section.offsetTop - 60;
-        if (pageYOffset >= sectionTop) {
-          current = section.getAttribute("id");
-        }
+        if (pageYOffset >= sectionTop) current = section.getAttribute("id");
       });
-
-      navLinks.forEach(link => {
-        link.classList.remove("active");
-        if (link.getAttribute("href") === "#" + current) {
-          link.classList.add("active");
-        }
-      });
+      navLinks.forEach(link => link.classList.remove("active"));
+      document.querySelector('nav a[href="#' + current + '"]')?.classList.add("active");
     });
   </script>
 
