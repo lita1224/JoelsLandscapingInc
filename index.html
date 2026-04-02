@@ -8,9 +8,24 @@
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
     body { line-height: 1.6; color: #333; }
 
-    /* Header / Hero */
+    /* Navigation */
+    nav {
+      background: #333;
+      text-align: center;
+      padding: 10px 0;
+    }
+    nav a {
+      color: white;
+      padding: 12px 20px;
+      text-decoration: none;
+      display: inline-block;
+      font-weight: bold;
+    }
+    nav a:hover { background: #4CAF50; }
+
+    /* Hero */
     header {
-      background: #4CAF50; /* green background behind logo */
+      background: #4CAF50;
       color: white;
       text-align: center;
       padding: 80px 20px;
@@ -27,24 +42,36 @@
       font-weight: bold;
     }
 
-    /* Navigation */
-    nav {
-      background: #333;
+    /* Sections */
+    section { padding: 60px 20px; max-width: 1200px; margin: auto; }
+
+    /* Services */
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
       text-align: center;
     }
-    nav a {
-      color: white;
-      display: inline-block;
-      padding: 15px 20px;
-      text-decoration: none;
+    .service-card {
+      background: #f4f4f4;
+      padding: 20px;
+      border-radius: 10px;
+      transition: transform 0.3s;
     }
-    nav a:hover { background: #4CAF50; }
+    .service-card:hover { transform: translateY(-5px); }
 
-    /* Sections */
-    section { padding: 60px 20px; max-width: 1000px; margin: auto; }
-    section h2 { font-size: 2rem; margin-bottom: 20px; text-align: center; }
-    section img { max-width: 100%; display: block; margin: 20px auto; border-radius: 10px; }
-    section p { text-align: center; font-size: 1.1rem; }
+    /* Portfolio */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .portfolio-grid img {
+      width: 100%;
+      border-radius: 10px;
+      transition: transform 0.3s;
+    }
+    .portfolio-grid img:hover { transform: scale(1.05); }
 
     /* Footer */
     footer {
@@ -54,6 +81,7 @@
       padding: 20px;
     }
 
+    /* Responsive */
     @media(max-width: 768px){
       header h1 { font-size: 2rem; }
       header p { font-size: 1rem; }
@@ -71,7 +99,7 @@
     <a href="#contact">Contact</a>
   </nav>
 
-  <!-- Hero Section with Logo -->
+  <!-- Hero Section -->
   <header>
     <img src="joel-logo.png" alt="Joel's Landscaping Logo">
     <h1>Joel's Landscaping</h1>
@@ -79,20 +107,40 @@
     <a href="#contact" class="btn">Get a Free Quote</a>
   </header>
 
-  <!-- Services -->
+  <!-- Services Section -->
   <section id="services">
     <h2>Our Services</h2>
-    <p>Lawn care, garden design, hardscaping, and more — we do it all!</p>
+    <div class="services">
+      <div class="service-card">
+        <h3>Lawn Care</h3>
+        <p>Keep your lawn neat, green, and healthy all year round.</p>
+      </div>
+      <div class="service-card">
+        <h3>Garden Design</h3>
+        <p>Beautiful, customized garden designs for homes and businesses.</p>
+      </div>
+      <div class="service-card">
+        <h3>Hardscaping</h3>
+        <p>Patios, pathways, and retaining walls built with precision and style.</p>
+      </div>
+      <div class="service-card">
+        <h3>Tree & Shrub Care</h3>
+        <p>Pruning, planting, and maintenance for healthy trees and shrubs.</p>
+      </div>
+    </div>
   </section>
 
-  <!-- Portfolio / Work -->
+  <!-- Portfolio Section -->
   <section id="portfolio">
     <h2>Our Work</h2>
-    <p>Check out one of our recent projects.</p>
-    <img src="work-sample.jpg" alt="Completed landscaping project">
+    <p>Check out some of our recent projects:</p>
+    <div class="portfolio-grid">
+      <img src="work-sample.jpg" alt="Completed landscaping project">
+      <!-- Add more images here in the future -->
+    </div>
   </section>
 
-  <!-- Contact -->
+  <!-- Contact Section -->
   <section id="contact">
     <h2>Contact Us</h2>
     <p>Email: JoelsLandscapingllc@gmail.com</p>
@@ -104,6 +152,3 @@
   <footer>
     <p>© 2026 Joel's Landscaping</p>
   </footer>
-
-</body>
-</html>
