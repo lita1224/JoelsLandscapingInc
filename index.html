@@ -73,6 +73,33 @@
     }
     .portfolio-grid img:hover { transform: scale(1.05); }
 
+    /* Contact Form */
+    form {
+      max-width: 600px;
+      margin: 20px auto 0;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    input, textarea {
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+      width: 100%;
+    }
+    button {
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      background: #4CAF50;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    button:hover { background: #45a049; }
+
     /* Footer */
     footer {
       background: #333;
@@ -81,7 +108,6 @@
       padding: 20px;
     }
 
-    /* Responsive */
     @media(max-width: 768px){
       header h1 { font-size: 2rem; }
       header p { font-size: 1rem; }
@@ -146,9 +172,21 @@
     <p>Email: JoelsLandscapingllc@gmail.com</p>
     <p>Phone: (386) 564-6555</p>
     <p>Address: 123 Landscaping St, Your City, FL</p>
+
+    <!-- Contact Form -->
+    <form action="https://formspree.io/f/your-form-id" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <input type="tel" name="phone" placeholder="Your Phone Number">
+      <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
   </section>
 
   <!-- Footer -->
   <footer>
     <p>© 2026 Joel's Landscaping</p>
   </footer>
+
+</body>
+</html>
