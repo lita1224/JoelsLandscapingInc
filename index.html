@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Our Work Carousel</title>
 <style>
-body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f9f9f9; text-align:center; }
+body { font-family: Arial; margin:0; padding:0; background:#f9f9f9; text-align:center; }
 section { padding:80px 20px; max-width:600px; margin:auto; }
 
 /* Card */
@@ -49,15 +49,14 @@ button:hover { background: rgba(0,0,0,0.8); }
 const mediaList = [
   { type:'image', src:'work-sample.jpg' },
   { type:'image', src:'work-sample2.jpg' },
-  { type:'video', src:'work-video.mp4' }
+  { type:'video', thumbnail:'work-sample2.jpg', src:'work-video.mp4.mp4' }
 ];
 
 let currentIndex = 0;
-const cardMedia = document.getElementById('card-media');
+const cardContainer = document.getElementById('card');
 
 function showCard(index) {
   const item = mediaList[index];
-  const cardContainer = document.getElementById('card');
   cardContainer.innerHTML = '';
 
   if(item.type === 'image') {
@@ -66,19 +65,33 @@ function showCard(index) {
     img.alt = `Project ${index+1}`;
     cardContainer.appendChild(img);
   } else if(item.type === 'video') {
-    const vid = document.createElement('video');
-    vid.src = item.src;
-    vid.autoplay = true;
-    vid.muted = true;
-    vid.loop = true;
-    cardContainer.appendChild(vid);
+    // show thumbnail first
+    const img = document.createElement('img');
+    img.src = item.thumbnail;
+    img.alt = "Video Thumbnail";
+    img.style.cursor = "pointer";
+    cardContainer.appendChild(img);
+
+    // on click, replace with video
+    img.addEventListener('click', () => {
+      const vid = document.createElement('video');
+      vid.src = item.src;
+      vid.autoplay = true;
+      vid.muted = true;
+      vid.loop = true;
+      vid.controls = true;
+      vid.style.width = '100%';
+      cardContainer.innerHTML = '';
+      cardContainer.appendChild(vid);
+      vid.play();
+    });
   }
 }
 
 // Initial display
 showCard(currentIndex);
 
-// Button events
+// Buttons
 document.getElementById('prev').addEventListener('click', ()=>{
   currentIndex = (currentIndex - 1 + mediaList.length) % mediaList.length;
   showCard(currentIndex);
