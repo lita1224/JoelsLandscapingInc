@@ -20,8 +20,11 @@ nav {
   background: #333;
   text-align: center;
   padding: 10px 0;
+  position: sticky;   /* makes it stick */
+  top: 0;             /* sticks at the top of the screen */
+  z-index: 1000;      /* keeps it above other elements */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* optional shadow for style */
 }
-
 nav a {
   color: white;
   padding: 12px 20px;
