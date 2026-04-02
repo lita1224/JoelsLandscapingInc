@@ -10,14 +10,14 @@
 
   <!-- Navigation -->
   <nav>
-    <a href="#">Home</a>
+    <a href="#home">Home</a>
     <a href="#services">Services</a>
     <a href="#portfolio">Our Work</a>
     <a href="#contact">Contact</a>
   </nav>
 
   <!-- Hero Section -->
-  <header>
+  <header id="home">
     <img src="joel-logo.png" alt="Joel's Landscaping Logo">
     <h1>Joel's Landscaping</h1>
     <p>Fast, Affordable, and Professional Landscaping Services</p>
@@ -51,9 +51,33 @@
   <section id="portfolio">
     <h2>Our Work</h2>
     <p>Check out some of our recent projects:</p>
-    <div class="portfolio-grid">
-      <img src="work-sample.jpg" alt="Completed landscaping project">
-      <!-- Add more images here as needed -->
+
+    <div class="flip-container">
+      <!-- Image Flip Card -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="work-sample2.jpg" alt="Completed landscaping project">
+          </div>
+          <div class="flip-card-back">
+            <h3>Lawn Care Project</h3>
+            <p>Our team did an amazing job!</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Video Flip Card -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="work-sample2.jpg" alt="Video project thumbnail">
+          </div>
+          <div class="flip-card-back">
+            <video src="work-video.mp4" autoplay muted loop></video>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -64,7 +88,6 @@
     <p>Phone: (386) 564-6555</p>
     <p>Address: 123 Landscaping St, Your City, FL</p>
 
-    <!-- Contact Form -->
     <form action="https://formspree.io/f/your-form-id" method="POST">
       <input type="text" name="name" placeholder="Your Name" required>
       <input type="email" name="email" placeholder="Your Email" required>
@@ -78,6 +101,29 @@
   <footer>
     <p>© 2026 Joel's Landscaping</p>
   </footer>
+
+  <!-- JS for highlighting nav links -->
+  <script>
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll("nav a");
+
+    window.addEventListener("scroll", () => {
+      let current = "";
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 60;
+        if (pageYOffset >= sectionTop) {
+          current = section.getAttribute("id");
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === "#" + current) {
+          link.classList.add("active");
+        }
+      });
+    });
+  </script>
 
 </body>
 </html>
