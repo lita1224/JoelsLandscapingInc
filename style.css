@@ -36,7 +36,7 @@ header h1 {
 header p {
   font-size: 1.2rem;
   max-width: 600px;
-
+}
 header img {
   margin: 0 auto 15px auto;
   max-width: 200px;
@@ -125,34 +125,4 @@ nav a:hover {
 
 .btn:hover {
   background: #1b5e20;
-}
-header, section, footer {
-  text-align: center;
-}
-header {
-  min-height: 60vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
- background-size: cover;
-  background-position: center;
-
-  color: white;
-  height: 80vh;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-header h1 {
-  font-size: 3rem;
-  margin-bottom: 10px;
-}
-
-header p {
-  font-size: 1.2rem;
-  max-width: 600px;
 }
