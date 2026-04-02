@@ -106,3 +106,16 @@ nav a {
 nav a:hover {
   text-decoration: underline;
 }
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 25px;
+  background: #2e7d32;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  background: #1b5e20;
+}
