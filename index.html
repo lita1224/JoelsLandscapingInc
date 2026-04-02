@@ -1,133 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Joel's Landscaping</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Work Test</title>
+<style>
+body { font-family: Arial; margin:0; padding:0; background:#f9f9f9; }
+section { padding:80px 20px; max-width:1200px; margin:auto; text-align:center; }
+h2 { margin-bottom:20px; }
+
+/* Flip Cards */
+.flip-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 20px;
+  justify-items: center;
+}
+
+.flip-card {
+  perspective: 1000px;
+  width: 100%;
+  max-width: 300px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(-180deg); /* Book-style flip */
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.flip-card-front img { width:100%; display:block; }
+.flip-card-back img, .flip-card-back video { width:100%; display:block; border-radius:10px; }
+.flip-card-back { transform: rotateY(180deg); display:flex; justify-content:center; align-items:center; background:#4CAF50; color:white; padding:10px; }
+
+/* Add space after cards so contact section doesn't overlap */
+.spacer { height:50px; }
+</style>
 </head>
 <body>
 
-  <!-- Navigation -->
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#services">Services</a>
-    <a href="#portfolio">Our Work</a>
-    <a href="#contact">Contact</a>
-  </nav>
+<section id="portfolio">
+  <h2>Our Work</h2>
 
-  <!-- Hero Section -->
-  <header id="home">
-    <img src="joel-logo.png" alt="Joel's Landscaping Logo">
-    <h1>Joel's Landscaping</h1>
-    <p>Fast, Affordable, and Professional Landscaping Services</p>
-    <a href="#contact" class="btn">Get a Free Quote</a>
-  </header>
-
-  <!-- Services Section -->
-  <section id="services">
-    <h2>Our Services</h2>
-    <div class="services">
-      <div class="service-card">
-        <h3>Lawn Care</h3>
-        <p>Keep your lawn neat, green, and healthy all year round.</p>
-      </div>
-      <div class="service-card">
-        <h3>Garden Design</h3>
-        <p>Beautiful, customized garden designs for homes and businesses.</p>
-      </div>
-      <div class="service-card">
-        <h3>Hardscaping</h3>
-        <p>Patios, pathways, and retaining walls built with precision and style.</p>
-      </div>
-      <div class="service-card">
-        <h3>Tree & Shrub Care</h3>
-        <p>Pruning, planting, and maintenance for healthy trees and shrubs.</p>
+  <div class="flip-container">
+    <!-- Card 1: image -->
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="work-sample.jpg" alt="Project 1">
+        </div>
+        <div class="flip-card-back">
+          <img src="work-sample2.jpg" alt="Project 1 Back">
+        </div>
       </div>
     </div>
-  </section>
 
-  <!-- Portfolio Section -->
-  <section id="portfolio">
-    <h2>Our Work</h2>
-    <p>Check out some of our recent projects:</p>
-
-    <div class="flip-container">
-      <!-- Card 1 -->
-      <div class="flip-card">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <img src="work-sample.jpg" alt="Project 1">
-          </div>
-          <div class="flip-card-back">
-            <img src="work-sample2.jpg" alt="Project 1 Back">
-          </div>
+    <!-- Card 2: image -->
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="work-sample2.jpg" alt="Project 2">
+        </div>
+        <div class="flip-card-back">
+          <video src="work-video.mp4" autoplay muted loop></video>
         </div>
       </div>
-
-      <!-- Card 2 -->
-      <div class="flip-card">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <img src="work-sample2.jpg" alt="Project 2">
-          </div>
-          <div class="flip-card-back">
-            <video src="work-video.mp4" autoplay muted loop></video>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="flip-card">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <img src="work-sample2.jpg" alt="Project 3">
-          </div>
-          <div class="flip-card-back">
-            <p>More Projects Coming Soon!</p>
-          </div>
-        </div>
-      </div>
-
     </div>
-  </section>
 
-  <!-- Contact Section -->
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <p>Email: JoelsLandscapingllc@gmail.com</p>
-    <p>Phone: (386) 564-6555</p>
-    <p>Address: 123 Landscaping St, Your City, FL</p>
+    <!-- Card 3: image -->
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="work-sample2.jpg" alt="Project 3">
+        </div>
+        <div class="flip-card-back">
+          <p>More Projects Coming Soon!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <form action="https://formspree.io/f/your-form-id" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <input type="tel" name="phone" placeholder="Your Phone Number">
-      <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
+<div class="spacer"></div>
 
-  <!-- Footer -->
-  <footer>
-    <p>© 2026 Joel's Landscaping</p>
-  </footer>
-
-  <!-- JS for active nav link highlighting -->
-  <script>
-    const sections = document.querySelectorAll("section");
-    const navLinks = document.querySelectorAll("nav a");
-
-    window.addEventListener("scroll", () => {
-      let current = "";
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop - 60;
-        if (pageYOffset >= sectionTop) current = section.getAttribute("id");
-      });
-      navLinks.forEach(link => link.classList.remove("active"));
-      document.querySelector('nav a[href="#' + current + '"]')?.classList.add("active");
-    });
-  </script>
+<section id="contact">
+  <h2>Contact Us</h2>
+  <p>Email: JoelsLandscapingllc@gmail.com</p>
+  <p>Phone: (386) 564-6555</p>
+</section>
 
 </body>
 </html>
