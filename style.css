@@ -7,24 +7,27 @@
 
 /* Body styles */
 body {
+  margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f9f9f9;
   color: #2c3e50;
-  line-height: 1.6;
-  padding: 20px;
 }
 
 /* Header styles */
 header {
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
               url('work-sample.jpg');
   background-size: cover;
   background-position: center;
-  color: white;
-  padding: 140px 20px;
-  text-align: center;
-}
 
+  color: white;
+  height: 80vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 header h1 {
   font-size: 3rem;
   margin-bottom: 10px;
@@ -32,7 +35,7 @@ header h1 {
 
 header p {
   font-size: 1.2rem;
-
+  max-width: 600px;
 
 header img {
   display: block;
